@@ -1,0 +1,8 @@
+[package]
+name = "cgl"
+version = "0.0.1"
+authors = []
+
+[dependencies.opengles]
+
+git = "https://github.com/servo/rust-opengles"
