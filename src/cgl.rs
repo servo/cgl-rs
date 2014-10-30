@@ -11,7 +11,7 @@
 
 #![allow(non_uppercase_statics)]
 
-use opengles::gl2::{GLenum, GLint, GLsizei, GLuint};
+use gleam::gl::{GLenum, GLint, GLsizei, GLuint};
 use libc::{c_void, c_int};
 
 pub type CGLContextObj = *mut c_void;
