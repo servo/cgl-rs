@@ -14,8 +14,8 @@
 
 #![feature(globs)]
 
-extern crate opengles;
 extern crate libc;
+extern crate gleam;
 
 pub use cgl::*;
 
