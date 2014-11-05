@@ -20,48 +20,48 @@ pub type CGLPixelFormatAttribute = c_int;
 pub type CGLPixelFormatObj = *mut c_void;
 pub type IOSurfaceRef = *mut c_void;
 
-pub static kCGLNoError: CGLError = 0;
+pub const kCGLNoError: CGLError = 0;
 
-pub static kCGLPFAAllRenderers: CGLPixelFormatAttribute = 1;
-pub static kCGLPFADoubleBuffer: CGLPixelFormatAttribute = 5;
-pub static kCGLPFAStereo: CGLPixelFormatAttribute = 6;
-pub static kCGLPFAAuxBuffers: CGLPixelFormatAttribute = 7;
-pub static kCGLPFAColorSize: CGLPixelFormatAttribute = 8;
-pub static kCGLPFAAlphaSize: CGLPixelFormatAttribute = 11;
-pub static kCGLPFADepthSize: CGLPixelFormatAttribute = 12;
-pub static kCGLPFAStencilSize: CGLPixelFormatAttribute = 13;
-pub static kCGLPFAAccumSize: CGLPixelFormatAttribute = 14;
-pub static kCGLPFAMinimumPolicy: CGLPixelFormatAttribute = 51;
-pub static kCGLPFAMaximumPolicy: CGLPixelFormatAttribute = 52;
-pub static kCGLPFAOffScreen: CGLPixelFormatAttribute = 53;
-pub static kCGLPFAFullScreen: CGLPixelFormatAttribute = 54;
-pub static kCGLPFASampleBuffers: CGLPixelFormatAttribute = 55;
-pub static kCGLPFASamples: CGLPixelFormatAttribute = 56;
-pub static kCGLPFAAuxDepthStencil: CGLPixelFormatAttribute = 57;
-pub static kCGLPFAColorFloat: CGLPixelFormatAttribute = 58;
-pub static kCGLPFAMultisample: CGLPixelFormatAttribute = 59;
-pub static kCGLPFASupersample: CGLPixelFormatAttribute = 60;
-pub static kCGLPFASampleAlpha: CGLPixelFormatAttribute = 61;
-pub static kCGLPFARendererID: CGLPixelFormatAttribute = 70;
-pub static kCGLPFASingleRenderer: CGLPixelFormatAttribute = 71;
-pub static kCGLPFANoRecovery: CGLPixelFormatAttribute = 72;
-pub static kCGLPFAAccelerated: CGLPixelFormatAttribute = 73;
-pub static kCGLPFAClosestPolicy: CGLPixelFormatAttribute = 74;
-pub static kCGLPFARobust: CGLPixelFormatAttribute = 75;
-pub static kCGLPFABackingStore: CGLPixelFormatAttribute = 76;
-pub static kCGLPFAMPSafe: CGLPixelFormatAttribute = 78;
-pub static kCGLPFAWindow: CGLPixelFormatAttribute = 80;
-pub static kCGLPFAMultiScreen: CGLPixelFormatAttribute = 81;
-pub static kCGLPFACompliant: CGLPixelFormatAttribute = 83;
-pub static kCGLPFADisplayMask: CGLPixelFormatAttribute = 84;
-pub static kCGLPFAPBuffer: CGLPixelFormatAttribute = 90;
-pub static kCGLPFARemotePBuffer: CGLPixelFormatAttribute = 91;
-pub static kCGLPFAAllowOfflineRenderers: CGLPixelFormatAttribute = 96;
-pub static kCGLPFAAcceleratedCompute: CGLPixelFormatAttribute = 97;
-pub static kCGLPFAOpenGLProfile: CGLPixelFormatAttribute = 99;
-pub static kCGLPFAVirtualScreenCount: CGLPixelFormatAttribute = 128;
+pub const kCGLPFAAllRenderers: CGLPixelFormatAttribute = 1;
+pub const kCGLPFADoubleBuffer: CGLPixelFormatAttribute = 5;
+pub const kCGLPFAStereo: CGLPixelFormatAttribute = 6;
+pub const kCGLPFAAuxBuffers: CGLPixelFormatAttribute = 7;
+pub const kCGLPFAColorSize: CGLPixelFormatAttribute = 8;
+pub const kCGLPFAAlphaSize: CGLPixelFormatAttribute = 11;
+pub const kCGLPFADepthSize: CGLPixelFormatAttribute = 12;
+pub const kCGLPFAStencilSize: CGLPixelFormatAttribute = 13;
+pub const kCGLPFAAccumSize: CGLPixelFormatAttribute = 14;
+pub const kCGLPFAMinimumPolicy: CGLPixelFormatAttribute = 51;
+pub const kCGLPFAMaximumPolicy: CGLPixelFormatAttribute = 52;
+pub const kCGLPFAOffScreen: CGLPixelFormatAttribute = 53;
+pub const kCGLPFAFullScreen: CGLPixelFormatAttribute = 54;
+pub const kCGLPFASampleBuffers: CGLPixelFormatAttribute = 55;
+pub const kCGLPFASamples: CGLPixelFormatAttribute = 56;
+pub const kCGLPFAAuxDepthStencil: CGLPixelFormatAttribute = 57;
+pub const kCGLPFAColorFloat: CGLPixelFormatAttribute = 58;
+pub const kCGLPFAMultisample: CGLPixelFormatAttribute = 59;
+pub const kCGLPFASupersample: CGLPixelFormatAttribute = 60;
+pub const kCGLPFASampleAlpha: CGLPixelFormatAttribute = 61;
+pub const kCGLPFARendererID: CGLPixelFormatAttribute = 70;
+pub const kCGLPFASingleRenderer: CGLPixelFormatAttribute = 71;
+pub const kCGLPFANoRecovery: CGLPixelFormatAttribute = 72;
+pub const kCGLPFAAccelerated: CGLPixelFormatAttribute = 73;
+pub const kCGLPFAClosestPolicy: CGLPixelFormatAttribute = 74;
+pub const kCGLPFARobust: CGLPixelFormatAttribute = 75;
+pub const kCGLPFABackingStore: CGLPixelFormatAttribute = 76;
+pub const kCGLPFAMPSafe: CGLPixelFormatAttribute = 78;
+pub const kCGLPFAWindow: CGLPixelFormatAttribute = 80;
+pub const kCGLPFAMultiScreen: CGLPixelFormatAttribute = 81;
+pub const kCGLPFACompliant: CGLPixelFormatAttribute = 83;
+pub const kCGLPFADisplayMask: CGLPixelFormatAttribute = 84;
+pub const kCGLPFAPBuffer: CGLPixelFormatAttribute = 90;
+pub const kCGLPFARemotePBuffer: CGLPixelFormatAttribute = 91;
+pub const kCGLPFAAllowOfflineRenderers: CGLPixelFormatAttribute = 96;
+pub const kCGLPFAAcceleratedCompute: CGLPixelFormatAttribute = 97;
+pub const kCGLPFAOpenGLProfile: CGLPixelFormatAttribute = 99;
+pub const kCGLPFAVirtualScreenCount: CGLPixelFormatAttribute = 128;
 
-pub static CORE_BOOLEAN_ATTRIBUTES: &'static [CGLPixelFormatAttribute] =
+pub const CORE_BOOLEAN_ATTRIBUTES: &'static [CGLPixelFormatAttribute] =
     &[kCGLPFAAllRenderers,
       kCGLPFADoubleBuffer,
       kCGLPFAStereo,
@@ -90,7 +90,7 @@ pub static CORE_BOOLEAN_ATTRIBUTES: &'static [CGLPixelFormatAttribute] =
       kCGLPFAAllowOfflineRenderers,
       kCGLPFAAcceleratedCompute];
 
-pub static CORE_INTEGER_ATTRIBUTES: &'static [CGLPixelFormatAttribute] =
+pub const CORE_INTEGER_ATTRIBUTES: &'static [CGLPixelFormatAttribute] =
     &[kCGLPFAColorSize,
       kCGLPFAAlphaSize,
       kCGLPFADepthSize,
