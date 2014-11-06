@@ -9,7 +9,7 @@
 
 // Mac-specific OpenGL bindings.
 
-#![allow(non_uppercase_statics)]
+#![allow(non_upper_case_globals)]
 
 use gleam::gl::{GLenum, GLint, GLsizei, GLuint};
 use libc::{c_void, c_int};
