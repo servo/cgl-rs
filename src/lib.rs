@@ -8,8 +8,6 @@
 // except according to those terms.
 
 #![crate_name = "cgl"]
-#![comment = "CGL bindings for Mac"]
-#![license = "ASL2"]
 #![crate_type = "lib"]
 
 #![feature(globs)]
