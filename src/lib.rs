@@ -10,8 +10,6 @@
 #![crate_name = "cgl"]
 #![crate_type = "lib"]
 
-#![feature(globs)]
-
 extern crate libc;
 extern crate gleam;
 

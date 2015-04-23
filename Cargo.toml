@@ -6,3 +6,6 @@ authors = []
 
 [dependencies.gleam]
 git = "https://github.com/servo/gleam"
+
+[dependencies]
+libc = "*"
