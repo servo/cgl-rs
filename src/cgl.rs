@@ -119,7 +119,7 @@ extern {
                                   pix_num: GLint,
                                   attrib: CGLPixelFormatAttribute,
                                   value: *mut GLint) -> CGLError;
-    pub fn CGLDestroyPixelFormat(pix: CGLPixelFormatObj);
+    pub fn CGLDestroyPixelFormat(pix: CGLPixelFormatObj) -> CGLError;
 
     // Context functions
     pub fn CGLCreateContext(pix: CGLPixelFormatObj, share: CGLContextObj, ctx: *mut CGLContextObj) ->
