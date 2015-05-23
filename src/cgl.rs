@@ -137,6 +137,7 @@ pub const CORE_INTEGER_ATTRIBUTES: &'static [CGLPixelFormatAttribute] =
       kCGLPFAOpenGLProfile,
       kCGLPFAVirtualScreenCount];
 
+#[link(name = "OpenGL", kind = "framework")]
 extern {
     // CGLCurrent.h
 
