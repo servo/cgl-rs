@@ -14,10 +14,14 @@
 use gleam::gl::{GLenum, GLint, GLsizei, GLuint};
 use libc::{c_void, c_int};
 
-pub type CGLContextObj = *mut c_void;
-pub type CGLError = c_int;
 pub type CGLPixelFormatAttribute = c_int;
+pub type CGLContextParameter = c_int;
+pub type CGLContextEnable = c_int;
+pub type CGLGlobalOption = c_int;
+pub type CGLError = c_int;
+
 pub type CGLPixelFormatObj = *mut c_void;
+pub type CGLContextObj = *mut c_void;
 pub type IOSurfaceRef = *mut c_void;
 
 pub const kCGLNoError: CGLError = 0;
@@ -60,6 +64,36 @@ pub const kCGLPFAAllowOfflineRenderers: CGLPixelFormatAttribute = 96;
 pub const kCGLPFAAcceleratedCompute: CGLPixelFormatAttribute = 97;
 pub const kCGLPFAOpenGLProfile: CGLPixelFormatAttribute = 99;
 pub const kCGLPFAVirtualScreenCount: CGLPixelFormatAttribute = 128;
+
+pub const kCGLCESwapRectangle: CGLContextEnable = 201;
+pub const kCGLCERasterization: CGLContextEnable = 221;
+pub const kCGLCEStateValidation: CGLContextEnable = 301;
+pub const kCGLCESurfaceBackingSize: CGLContextEnable = 305;
+pub const kCGLCEDisplayListOptimization: CGLContextEnable = 307;
+pub const kCGLCEMPEngine: CGLContextEnable = 313;
+
+pub const kCGLCPSwapRectangle: CGLContextParameter = 200;
+pub const kCGLCPSwapInterval: CGLContextParameter = 222;
+pub const kCGLCPDispatchTableSize: CGLContextParameter = 224;
+pub const kCGLCPClientStorage: CGLContextParameter = 226;
+pub const kCGLCPSurfaceTexture: CGLContextParameter = 228;
+pub const kCGLCPSurfaceOrder: CGLContextParameter = 235;
+pub const kCGLCPSurfaceOpacity: CGLContextParameter = 236;
+pub const kCGLCPSurfaceBackingSize: CGLContextParameter = 304;
+pub const kCGLCPSurfaceSurfaceVolatile: CGLContextParameter = 306;
+pub const kCGLCPReclaimResources: CGLContextParameter = 308;
+pub const kCGLCPCurrentRendererID: CGLContextParameter = 309;
+pub const kCGLCPGPUVertexProcessing: CGLContextParameter = 310;
+pub const kCGLCPGPUFragmentProcessing: CGLContextParameter = 311;
+pub const kCGLCPHasDrawable: CGLContextParameter = 314;
+pub const kCGLCPMPSwapsInFlight: CGLContextParameter = 315;
+
+pub const kCGLGOFormatCacheSize: CGLGlobalOption = 501;
+pub const kCGLGOClearFormatCache: CGLGlobalOption = 502;
+pub const kCGLGORetainRenderers: CGLGlobalOption = 503;
+pub const kCGLGOResetLibrary: CGLGlobalOption = 504;
+pub const kCGLGOUseErrorHandler: CGLGlobalOption = 505;
+pub const kCGLGOUseBuildCache: CGLGlobalOption = 506;
 
 pub const CORE_BOOLEAN_ATTRIBUTES: &'static [CGLPixelFormatAttribute] =
     &[kCGLPFAAllRenderers,
@@ -127,9 +161,23 @@ extern {
     pub fn CGLDestroyContext(ctx: CGLContextObj) -> CGLError;
     pub fn CGLGetPixelFormat(ctx: CGLContextObj) -> CGLPixelFormatObj;
 
+    // Getting and Setting Context Options
+    pub fn CGLEnable(ctx: CGLContextObj, pname: CGLContextEnable) -> CGLError;
+    pub fn CGLDisable(ctx: CGLContextObj, pname: CGLContextEnable) -> CGLError;
+    pub fn CGLIsEnabled(ctx: CGLContextObj, pname: CGLContextEnable, enable: &mut GLint) -> CGLError;
+    pub fn CGLSetParameter(ctx: CGLContextObj, pname: CGLContextParameter, params: &mut GLint) -> CGLError;
+    pub fn CGLGetParameter(ctx: CGLContextObj, pname: CGLContextParameter, params: &mut GLint) -> CGLError;
+
     // Locking functions
     pub fn CGLLockContext(ctx: CGLContextObj) -> CGLError;
     pub fn CGLUnlockContext(ctx: CGLContextObj) -> CGLError;
+
+    // Getting and Setting Global Information
+    pub fn CGLSetOption(pname: CGLGlobalOption, param: &mut GLint) -> CGLError;
+    pub fn CGLGetOption(pname: CGLGlobalOption, param: &GLint) -> CGLError;
+    pub fn CGLGetGlobalOption(pname: CGLGlobalOption, param: &mut GLint) -> CGLError;
+    pub fn CGLSetGlobalOption(pname: CGLGlobalOption, param: &GLint) -> CGLError;
+    pub fn CGLGetVersion (major: &mut GLint, minor: &mut GLint) -> CGLError;
 
     // CGLIOSurface.h
 
