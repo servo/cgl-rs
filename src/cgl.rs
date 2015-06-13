@@ -66,11 +66,13 @@ pub const kCGLPFAOpenGLProfile: CGLPixelFormatAttribute = 99;
 pub const kCGLPFAVirtualScreenCount: CGLPixelFormatAttribute = 128;
 
 pub const kCGLCESwapRectangle: CGLContextEnable = 201;
+pub const kCGLCESwapLimit: CGLContextEnable = 203;
 pub const kCGLCERasterization: CGLContextEnable = 221;
 pub const kCGLCEStateValidation: CGLContextEnable = 301;
 pub const kCGLCESurfaceBackingSize: CGLContextEnable = 305;
 pub const kCGLCEDisplayListOptimization: CGLContextEnable = 307;
 pub const kCGLCEMPEngine: CGLContextEnable = 313;
+pub const kCGLCECrashOnRemovedFunctions: CGLContextEnable = 316;
 
 pub const kCGLCPSwapRectangle: CGLContextParameter = 200;
 pub const kCGLCPSwapInterval: CGLContextParameter = 222;
@@ -166,7 +168,7 @@ extern {
     pub fn CGLEnable(ctx: CGLContextObj, pname: CGLContextEnable) -> CGLError;
     pub fn CGLDisable(ctx: CGLContextObj, pname: CGLContextEnable) -> CGLError;
     pub fn CGLIsEnabled(ctx: CGLContextObj, pname: CGLContextEnable, enable: &mut GLint) -> CGLError;
-    pub fn CGLSetParameter(ctx: CGLContextObj, pname: CGLContextParameter, params: &mut GLint) -> CGLError;
+    pub fn CGLSetParameter(ctx: CGLContextObj, pname: CGLContextParameter, params: &GLint) -> CGLError;
     pub fn CGLGetParameter(ctx: CGLContextObj, pname: CGLContextParameter, params: &mut GLint) -> CGLError;
 
     // Locking functions
@@ -174,10 +176,10 @@ extern {
     pub fn CGLUnlockContext(ctx: CGLContextObj) -> CGLError;
 
     // Getting and Setting Global Information
-    pub fn CGLSetOption(pname: CGLGlobalOption, param: &mut GLint) -> CGLError;
-    pub fn CGLGetOption(pname: CGLGlobalOption, param: &GLint) -> CGLError;
-    pub fn CGLGetGlobalOption(pname: CGLGlobalOption, param: &mut GLint) -> CGLError;
+    pub fn CGLSetOption(pname: CGLGlobalOption, param: &GLint) -> CGLError;
+    pub fn CGLGetOption(pname: CGLGlobalOption, param: &mut GLint) -> CGLError;
     pub fn CGLSetGlobalOption(pname: CGLGlobalOption, param: &GLint) -> CGLError;
+    pub fn CGLGetGlobalOption(pname: CGLGlobalOption, param: &mut GLint) -> CGLError;
     pub fn CGLGetVersion (major: &mut GLint, minor: &mut GLint) -> CGLError;
 
     // CGLIOSurface.h
