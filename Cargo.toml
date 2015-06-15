@@ -1,11 +1,13 @@
 [package]
 name = "cgl"
 license = "MIT / Apache-2.0"
-version = "0.0.1"
-authors = []
+version = "0.1.0"
+authors = ["The Servo Project Developers"]
+description = "Rust bindings for CGL on Mac"
+repository = "https://github.com/servo/cgl-rs"
 
 [dependencies.gleam]
-git = "https://github.com/servo/gleam"
+gleam = "0.1"
 
 [dependencies]
 libc = "*"
