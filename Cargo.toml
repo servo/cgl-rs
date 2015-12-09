@@ -8,4 +8,4 @@ repository = "https://github.com/servo/cgl-rs"
 
 [dependencies]
 libc = "0.2"
-gleam = "0.1"
+gleam = "0.2"
