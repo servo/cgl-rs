@@ -12,7 +12,7 @@
 #![allow(non_upper_case_globals)]
 
 use gleam::gl::{GLenum, GLint, GLsizei, GLuint};
-use libc::{c_void, c_int};
+use libc::{c_void, c_int, c_char};
 
 pub type CGLPixelFormatAttribute = c_int;
 pub type CGLContextParameter = c_int;
@@ -187,4 +187,8 @@ extern {
     pub fn CGLTexImageIOSurface2D(ctx: CGLContextObj, target: GLenum, internal_format: GLenum,
                                   width: GLsizei, height: GLsizei, format: GLenum, ty: GLenum,
                                   ioSurface: IOSurfaceRef, plane: GLuint) -> CGLError;
+
+    // https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGL_OpenGL/#//apple_ref/c/func/CGLErrorString
+    
+    pub fn CGLErrorString(error: CGLError) -> *const c_char;
 }
