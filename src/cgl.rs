@@ -22,6 +22,7 @@ pub type CGLError = c_int;
 
 pub type CGLPixelFormatObj = *mut c_void;
 pub type CGLContextObj = *mut c_void;
+pub type CGLShareGroupObj = *mut c_void;
 pub type IOSurfaceRef = *mut c_void;
 
 pub const kCGLNoError: CGLError = 0;
@@ -145,6 +146,7 @@ extern {
 
     pub fn CGLSetCurrentContext(ctx: CGLContextObj) -> CGLError;
     pub fn CGLGetCurrentContext() -> CGLContextObj;
+    pub fn CGLGetShareGroup(context: CGLContextObj) -> CGLShareGroupObj;
 
     // OpenGL.h
 
@@ -189,6 +191,6 @@ extern {
                                   ioSurface: IOSurfaceRef, plane: GLuint) -> CGLError;
 
     // https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGL_OpenGL/#//apple_ref/c/func/CGLErrorString
-    
+
     pub fn CGLErrorString(error: CGLError) -> *const c_char;
 }
