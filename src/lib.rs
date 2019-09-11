@@ -11,7 +11,6 @@
 #![crate_type = "lib"]
 
 extern crate libc;
-extern crate gleam;
 
 pub use cgl::*;
 

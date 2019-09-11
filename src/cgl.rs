@@ -11,8 +11,13 @@
 
 #![allow(non_upper_case_globals)]
 
-use gleam::gl::{GLenum, GLint, GLsizei, GLuint};
 use libc::{c_void, c_int, c_char};
+use std::os::raw;
+
+pub type GLenum = raw::c_uint;
+pub type GLint = raw::c_int;
+pub type GLsizei = raw::c_int;
+pub type GLuint = raw::c_uint;
 
 pub type CGLPixelFormatAttribute = c_int;
 pub type CGLContextParameter = c_int;
