@@ -159,6 +159,9 @@ extern {
                                   attrib: CGLPixelFormatAttribute,
                                   value: *mut GLint) -> CGLError;
     pub fn CGLDestroyPixelFormat(pix: CGLPixelFormatObj) -> CGLError;
+    pub fn CGLReleasePixelFormat(pix: CGLPixelFormatObj);
+    pub fn CGLRetainPixelFormat(pix: CGLPixelFormatObj) -> CGLPixelFormatObj;
+    pub fn CGLGetPixelFormatRetainCount(pix: CGLPixelFormatObj) -> GLuint;
 
     // Context functions
     pub fn CGLCreateContext(pix: CGLPixelFormatObj, share: CGLContextObj, ctx: *mut CGLContextObj) ->
