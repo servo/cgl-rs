@@ -7,17 +7,16 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-// Mac-specific OpenGL bindings.
+//! Mac-specific OpenGL bindings.
 
 #![allow(non_upper_case_globals)]
 
-use libc::{c_void, c_int, c_char};
-use std::os::raw;
+use std::os::raw::{c_void, c_int, c_uint, c_char};
 
-pub type GLenum = raw::c_uint;
-pub type GLint = raw::c_int;
-pub type GLsizei = raw::c_int;
-pub type GLuint = raw::c_uint;
+pub type GLenum = c_uint;
+pub type GLint = c_int;
+pub type GLsizei = c_int;
+pub type GLuint = c_uint;
 
 pub type CGLPixelFormatAttribute = c_int;
 pub type CGLContextParameter = c_int;
